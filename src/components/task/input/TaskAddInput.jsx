@@ -11,8 +11,8 @@ const TaskAddInput = ({ inputText, setInputText, taskList, setTaskList }) => {
         text: inputText,
       },
     ]);
-    console.log(...taskList);
-    console.log(inputText);
+    // console.log(...taskList);
+    setInputText("");
   };
 
   const handleChange = (e) => {
@@ -28,6 +28,7 @@ const TaskAddInput = ({ inputText, setInputText, taskList, setTaskList }) => {
           placeholder="add a task"
           className="taskAddInput"
           onChange={handleChange}
+          value={inputText}
         />
       </form>
     </div>
