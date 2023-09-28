@@ -3,11 +3,14 @@ import React from "react";
 const TaskAddInput = ({ inputText, setInputText, taskList, setTaskList }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    if (inputText === "") {
+      return;
+    }
     // カードを追加する
     setTaskList([
       ...taskList,
       {
+        id: taskList.length,
         text: inputText,
       },
     ]);
@@ -17,7 +20,7 @@ const TaskAddInput = ({ inputText, setInputText, taskList, setTaskList }) => {
 
   const handleChange = (e) => {
     setInputText(e.target.value);
-    console.log(inputText);
+    // console.log(inputText);
   };
 
   return (
