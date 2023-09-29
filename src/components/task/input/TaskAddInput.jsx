@@ -1,6 +1,12 @@
 import React from "react";
 
-const TaskAddInput = ({ inputText, setInputText, taskList, setTaskList }) => {
+const TaskAddInput = ({
+  inputText,
+  setInputText,
+  taskList,
+  setTaskList,
+  task,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText === "") {
@@ -11,6 +17,7 @@ const TaskAddInput = ({ inputText, setInputText, taskList, setTaskList }) => {
       ...taskList,
       {
         id: taskList.length,
+        draggableId: `task-${taskList.length}`,
         text: inputText,
       },
     ]);
